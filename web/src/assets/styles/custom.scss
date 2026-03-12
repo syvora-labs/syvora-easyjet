@@ -1,0 +1,320 @@
+// EasyJet Switzerland Virtual - Legacy Theme
+
+// EasyJet brand colors
+$ej-orange: #FF6600;
+$ej-orange-dark: #E55C00;
+$ej-orange-light: #FF8533;
+$ej-dark: #2b2b2b;
+$ej-dark-secondary: #363636;
+$ej-gray: #eaeaea;
+
+// Bootstrap variable overrides — legacy / utilitarian
+$primary: $ej-orange;
+$secondary: #555;
+$dark: $ej-dark;
+$light: $ej-gray;
+$body-bg: #e8e8e8;
+$body-color: #333;
+
+$font-family-sans-serif: Tahoma, Verdana, 'Segoe UI', Geneva, sans-serif;
+$font-size-base: 0.8125rem;
+
+$border-radius: 2px;
+$border-radius-sm: 1px;
+$border-radius-lg: 3px;
+
+$navbar-dark-color: rgba(255, 255, 255, 0.85);
+$navbar-dark-hover-color: #fff;
+
+$card-border-width: 1px;
+$card-border-color: #bbb;
+$card-border-radius: 2px;
+$card-cap-bg: #f0f0f0;
+
+$btn-border-radius: 2px;
+$btn-border-radius-sm: 1px;
+$btn-border-radius-lg: 3px;
+
+$input-border-radius: 2px;
+$input-border-color: #aaa;
+$input-focus-border-color: $ej-orange;
+
+$table-border-color: #ccc;
+
+// Import Bootstrap
+@import "bootstrap/scss/bootstrap";
+
+// Legacy global styles
+body {
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+}
+
+// Navbar — flat, solid, no gradients
+.navbar-ej {
+  background: $ej-dark;
+  border-bottom: 3px solid $ej-orange;
+  box-shadow: none;
+  padding: 0;
+  min-height: 64px;
+
+  .navbar-brand {
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 0 0.75rem;
+    color: #fff;
+    letter-spacing: 0;
+    line-height: 64px;
+    height: 64px;
+
+    span {
+      color: $ej-orange;
+    }
+  }
+
+  .nav-link {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 400;
+    font-size: 0.9rem;
+    padding: 0 0.75rem;
+    line-height: 64px;
+    height: 64px;
+    transition: none;
+    border-bottom: none;
+
+    &:hover,
+    &.active {
+      color: #fff;
+      background-color: rgba(255, 255, 255, 0.1);
+    }
+
+    &.active {
+      background-color: rgba($ej-orange, 0.25);
+    }
+  }
+
+  .dropdown-menu {
+    background: #fff;
+    border: 1px solid #aaa;
+    border-radius: 0;
+    margin-top: 0;
+    box-shadow: 2px 2px 6px rgba(0, 0, 0, 0.2);
+    min-width: 200px;
+    padding: 2px 0;
+
+    .dropdown-item {
+      color: #333;
+      padding: 0.4rem 0.9rem;
+      font-size: 0.8125rem;
+      transition: none;
+      border-radius: 0;
+
+      &:hover {
+        color: #fff;
+        background-color: $ej-orange;
+      }
+    }
+
+    .dropdown-divider {
+      border-color: #ddd;
+      margin: 2px 0;
+    }
+  }
+}
+
+// Card styling — flat, bordered
+.card {
+  box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  border: 1px solid #bbb;
+  border-radius: 2px;
+  transition: none;
+  background: #fff;
+
+  &:hover {
+    box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+  }
+}
+
+.card-header {
+  background: #f0f0f0;
+  border-bottom: 1px solid #ccc;
+  font-weight: 700;
+  font-size: 0.8125rem;
+  padding: 0.5rem 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+  color: #444;
+}
+
+// Stats cards — flat accent bar
+.stat-card {
+  border-left: 4px solid $ej-orange;
+  border-radius: 0;
+  padding: 0.9rem;
+
+  .stat-value {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #222;
+    line-height: 1.2;
+  }
+
+  .stat-label {
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    color: #777;
+    margin-top: 0.15rem;
+  }
+
+  &.stat-green { border-left-color: #2e7d32; }
+  &.stat-blue { border-left-color: #1565c0; }
+  &.stat-purple { border-left-color: #6a1b9a; }
+}
+
+// Status badges — square
+.badge-status {
+  font-size: 0.7rem;
+  font-weight: 700;
+  padding: 0.25em 0.55em;
+  border-radius: 1px;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+// Table styling — classic grid
+.table-ej {
+  font-size: 0.8125rem;
+
+  thead th {
+    background: #e8e8e8;
+    font-size: 0.7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: #555;
+    border-bottom: 2px solid #aaa;
+    border-top: 1px solid #ccc;
+    padding: 0.5rem 0.6rem;
+    font-weight: 700;
+  }
+
+  tbody td {
+    padding: 0.45rem 0.6rem;
+    vertical-align: middle;
+    border-bottom: 1px solid #ddd;
+  }
+
+  tbody tr {
+    transition: none;
+
+    &:hover {
+      background-color: #fff3e0;
+    }
+  }
+
+  // Alternating rows
+  tbody tr:nth-child(even) {
+    background-color: #fafafa;
+
+    &:hover {
+      background-color: #fff3e0;
+    }
+  }
+}
+
+// Page header
+.page-header {
+  margin-bottom: 1rem;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.5rem;
+
+  h1 {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: #222;
+    margin-bottom: 0.15rem;
+  }
+
+  p {
+    color: #777;
+    margin-bottom: 0;
+    font-size: 0.8125rem;
+  }
+}
+
+// Auth pages
+.auth-wrapper {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #d0d0d0;
+}
+
+.auth-card {
+  width: 100%;
+  max-width: 380px;
+  border-radius: 2px;
+  border: 1px solid #999;
+  box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.25);
+}
+
+// Content wrapper
+.content-wrapper {
+  padding: 1rem;
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+// Buttons — flatter, more utilitarian
+.btn {
+  font-weight: 600;
+  font-size: 0.8125rem;
+  border-radius: 2px;
+  text-transform: none;
+}
+
+.btn-sm {
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+}
+
+// Form controls — classic
+.form-control, .form-select {
+  border-radius: 2px;
+  font-size: 0.8125rem;
+  border-color: #aaa;
+
+  &:focus {
+    border-color: $ej-orange;
+    box-shadow: 0 0 0 2px rgba($ej-orange, 0.2);
+  }
+}
+
+.form-label {
+  font-size: 0.75rem;
+  margin-bottom: 0.2rem;
+}
+
+// Modal overrides
+.modal-content {
+  border-radius: 2px;
+  border: 1px solid #999;
+}
+
+.modal-header {
+  background: #f0f0f0;
+  border-bottom: 1px solid #ccc;
+  padding: 0.6rem 0.9rem;
+
+  .modal-title {
+    font-size: 0.9rem;
+    font-weight: 700;
+  }
+}
+
+// Alert overrides
+.alert {
+  border-radius: 2px;
+  font-size: 0.8125rem;
+}
